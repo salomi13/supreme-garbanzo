@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="login">
+        <div class="login-screen">
+            {% comment %} <form method="POST">
+                {% csrf_token %}
+                <table border = "1">
+                    {{ form }}
+                </table>
+                <input type="submit", value = "Create User"/>
+                <h1 style="color: red;">{{error}}</h1>
+                <h1 style="color: green;">{{info}}</h1>
+                <div class="d-flex justify-content-center links pt-5">
+                    If you have an accountalready <a href="/login" class="ml-2">Login</a>
+                </div>
+            </form> {% endcomment %}
+
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="username" style="color:Tomato;">Username</label>
+                  <input type="text" class="form-control" name="username"  placeholder="Username">
+
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1" style="color:Tomato;">Password</label>
+                  <input type="password" class="form-control" name="password1" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1" style="color:Tomato;">Confirm Password</label>
+                    <input type="password" class="form-control" name="password2" id="exampleInputPassword1" placeholder="Confirm Password">
+                </div>
+                
+                <button type="submit" value = "Create User" class="btn btn-primary">Submit</button>
+                <h1 style="color: red;">{{error}}</h1>
+                <h1 style="color: green;">{{info}}</h1>
+                <div class="d-flex justify-content-center links pt-5">
+                    If you have an accountalready <a href="/login" class="ml-2">Login</a>
+                </div>
+              </form>
+            {% comment %} <div class="app-title">
+                <h1>Signup</h1>
+            </div>
+
+            <form method="POST" action="" class="login-form">
+              {% csrf_token %}
+                <div class="control-group">
+                <input type="text" name="username" placeholder="Username..." class="form-control">
+                
+                </div>
+
+                <div class="control-group">
+                <input type="password" name="password" placeholder="Password..." class="form-control" >
+                </div>   
+               
+                <input class="btn login_btn" type="submit" value="signup">
+
+            </form>
+            {% for message in messages %}
+                    <p id="messages">{{message}}</p>
+            {% endfor %}             {% endcomment %}
+        
+            {% comment %} <div class="pt-8">
+                <div class="d-flex justify-content-center links pt-5">
+                    Don't have an account? <a href="" class="ml-2">Sign Up</a>
+                </div>
+            
+            </div> {% endcomment %}
+        </div>
+    </div>
+  
+
+{% endblock content %}
